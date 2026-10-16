@@ -1,0 +1,282 @@
+{
+  "n": 569,
+  "malignant": 212,
+  "benign": 357,
+  "pca": {
+    "pc1": 0.451,
+    "pc2": 0.194,
+    "n_components_95": 10,
+    "pc1_top_loadings": {
+      "mean concave points": 0.258,
+      "mean concavity": 0.255,
+      "worst concave points": 0.252,
+      "mean compactness": 0.238,
+      "worst perimeter": 0.234,
+      "worst concavity": 0.233
+    }
+  },
+  "k_selection": {
+    "silhouette": {
+      "2": 0.336,
+      "3": 0.298,
+      "4": 0.179,
+      "5": 0.175,
+      "6": 0.171,
+      "7": 0.148,
+      "8": 0.145
+    },
+    "chosen_k": 2
+  },
+  "primary": {
+    "method": "k-means, k=2, log1p + z-score, all 30 features",
+    "ari": 0.706,
+    "accuracy": 0.921,
+    "sensitivity_malignant": 0.849,
+    "specificity": 0.964,
+    "missed_malignant": 32,
+    "benign_flagged": 13
+  },
+  "stability": {
+    "seed_ari_min": 1.0,
+    "bootstrap_ari_median": 0.965,
+    "bootstrap_ari_p5": 0.923
+  },
+  "missed_vs_caught_malignant": {
+    "mean radius": {
+      "missed_median": 14.835,
+      "caught_median": 18.0,
+      "benign_median": 12.2
+    },
+    "mean concave points": {
+      "missed_median": 0.046,
+      "caught_median": 0.089,
+      "benign_median": 0.023
+    },
+    "worst concave points": {
+      "missed_median": 0.124,
+      "caught_median": 0.187,
+      "benign_median": 0.074
+    },
+    "worst area": {
+      "missed_median": 891.5,
+      "caught_median": 1431.0,
+      "benign_median": 547.4
+    },
+    "mean texture": {
+      "missed_median": 21.465,
+      "caught_median": 21.46,
+      "benign_median": 17.39
+    }
+  },
+  "sensitivity_analysis": [
+    {
+      "log": true,
+      "space": "full",
+      "algorithm": "kmeans",
+      "ari": 0.706,
+      "accuracy": 0.921,
+      "sensitivity_malignant": 0.849,
+      "specificity": 0.964,
+      "missed_malignant": 32,
+      "benign_flagged": 13
+    },
+    {
+      "log": true,
+      "space": "full",
+      "algorithm": "ward",
+      "ari": 0.695,
+      "accuracy": 0.917,
+      "sensitivity_malignant": 0.906,
+      "specificity": 0.924,
+      "missed_malignant": 20,
+      "benign_flagged": 27
+    },
+    {
+      "log": true,
+      "space": "full",
+      "algorithm": "gmm",
+      "ari": 0.654,
+      "accuracy": 0.905,
+      "sensitivity_malignant": 0.873,
+      "specificity": 0.924,
+      "missed_malignant": 27,
+      "benign_flagged": 27
+    },
+    {
+      "log": true,
+      "space": "pca2",
+      "algorithm": "kmeans",
+      "ari": 0.706,
+      "accuracy": 0.921,
+      "sensitivity_malignant": 0.849,
+      "specificity": 0.964,
+      "missed_malignant": 32,
+      "benign_flagged": 13
+    },
+    {
+      "log": true,
+      "space": "pca2",
+      "algorithm": "ward",
+      "ari": 0.672,
+      "accuracy": 0.91,
+      "sensitivity_malignant": 0.877,
+      "specificity": 0.93,
+      "missed_malignant": 26,
+      "benign_flagged": 25
+    },
+    {
+      "log": true,
+      "space": "pca2",
+      "algorithm": "gmm",
+      "ari": 0.655,
+      "accuracy": 0.905,
+      "sensitivity_malignant": 0.892,
+      "specificity": 0.913,
+      "missed_malignant": 23,
+      "benign_flagged": 31
+    },
+    {
+      "log": true,
+      "space": "pca95",
+      "algorithm": "kmeans",
+      "ari": 0.706,
+      "accuracy": 0.921,
+      "sensitivity_malignant": 0.849,
+      "specificity": 0.964,
+      "missed_malignant": 32,
+      "benign_flagged": 13
+    },
+    {
+      "log": true,
+      "space": "pca95",
+      "algorithm": "ward",
+      "ari": 0.655,
+      "accuracy": 0.905,
+      "sensitivity_malignant": 0.882,
+      "specificity": 0.919,
+      "missed_malignant": 25,
+      "benign_flagged": 29
+    },
+    {
+      "log": true,
+      "space": "pca95",
+      "algorithm": "gmm",
+      "ari": 0.029,
+      "accuracy": 0.627,
+      "sensitivity_malignant": 0.0,
+      "specificity": 1.0,
+      "missed_malignant": 212,
+      "benign_flagged": 0
+    },
+    {
+      "log": false,
+      "space": "full",
+      "algorithm": "kmeans",
+      "ari": 0.671,
+      "accuracy": 0.91,
+      "sensitivity_malignant": 0.825,
+      "specificity": 0.961,
+      "missed_malignant": 37,
+      "benign_flagged": 14
+    },
+    {
+      "log": false,
+      "space": "full",
+      "algorithm": "ward",
+      "ari": 0.575,
+      "accuracy": 0.88,
+      "sensitivity_malignant": 0.774,
+      "specificity": 0.944,
+      "missed_malignant": 48,
+      "benign_flagged": 20
+    },
+    {
+      "log": false,
+      "space": "full",
+      "algorithm": "gmm",
+      "ari": 0.774,
+      "accuracy": 0.94,
+      "sensitivity_malignant": 0.925,
+      "specificity": 0.95,
+      "missed_malignant": 16,
+      "benign_flagged": 18
+    },
+    {
+      "log": false,
+      "space": "pca2",
+      "algorithm": "kmeans",
+      "ari": 0.659,
+      "accuracy": 0.907,
+      "sensitivity_malignant": 0.825,
+      "specificity": 0.955,
+      "missed_malignant": 37,
+      "benign_flagged": 16
+    },
+    {
+      "log": false,
+      "space": "pca2",
+      "algorithm": "ward",
+      "ari": 0.659,
+      "accuracy": 0.907,
+      "sensitivity_malignant": 0.835,
+      "specificity": 0.95,
+      "missed_malignant": 35,
+      "benign_flagged": 18
+    },
+    {
+      "log": false,
+      "space": "pca2",
+      "algorithm": "gmm",
+      "ari": 0.655,
+      "accuracy": 0.905,
+      "sensitivity_malignant": 0.901,
+      "specificity": 0.908,
+      "missed_malignant": 21,
+      "benign_flagged": 33
+    },
+    {
+      "log": false,
+      "space": "pca95",
+      "algorithm": "kmeans",
+      "ari": 0.671,
+      "accuracy": 0.91,
+      "sensitivity_malignant": 0.825,
+      "specificity": 0.961,
+      "missed_malignant": 37,
+      "benign_flagged": 14
+    },
+    {
+      "log": false,
+      "space": "pca95",
+      "algorithm": "ward",
+      "ari": 0.702,
+      "accuracy": 0.919,
+      "sensitivity_malignant": 0.967,
+      "specificity": 0.891,
+      "missed_malignant": 7,
+      "benign_flagged": 39
+    },
+    {
+      "log": false,
+      "space": "pca95",
+      "algorithm": "gmm",
+      "ari": 0.134,
+      "accuracy": 0.691,
+      "sensitivity_malignant": 0.472,
+      "specificity": 0.821,
+      "missed_malignant": 112,
+      "benign_flagged": 64
+    }
+  ],
+  "sensitivity_range": {
+    "ari_min": 0.029,
+    "ari_max": 0.774,
+    "accuracy_min": 0.627,
+    "accuracy_max": 0.94
+  },
+  "supervised_reference": {
+    "model": "logistic regression, 10-fold CV",
+    "accuracy": 0.979,
+    "sensitivity": 0.958
+  }
+}
